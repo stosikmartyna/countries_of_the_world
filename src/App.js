@@ -1,7 +1,8 @@
 import React from 'react';
+import { CountriesView } from './Components/CountriesView';
 
 export const App = () => {
   return (
-    <h1>Hello world!</h1>
-  );
+    <CountriesView />
+  ); 
 }
