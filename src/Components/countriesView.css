@@ -1,0 +1,17 @@
+table {
+    margin: 0 auto;
+    width: 80vw;
+}
+
+table img {
+    height: 40px;
+    width: 60px;
+}
+
+td {
+    border: 1px solid lightgrey;
+}
+
+th {
+    border: 1px solid grey;
+}
