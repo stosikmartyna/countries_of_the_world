@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Header } from '../Header/Header';
 import { SearchInput } from '../SearchInput/SearchInput';
-import './CountriesList.css';
+import { CountriesTable } from '../CountriesTable/CountriesTable';
 
 export const CountriesList = () => {
     const [countries, setCountries] = useState(undefined);
@@ -37,36 +37,7 @@ export const CountriesList = () => {
         <>
             <Header />
             <SearchInput filterCountries={filterCountries} />
-            <table>
-                <thead>
-                    <tr>
-                        <th>Flag</th>
-                        <th>Country Name</th>
-                        <th>Native Name</th>
-                        <th>Capital</th>
-                        <th>Region</th>
-                        <th>Subregion</th>
-                        <th>Population</th>
-                        <th>Area</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {filteredCountries?.map(country => {
-                        return (
-                            <tr key={country.name}>
-                                <td><img src={country.flag} alt='flag' /></td>
-                                <td>{country.name}</td>
-                                <td>{country.nativeName}</td>
-                                <td>{country.capital}</td>
-                                <td>{country.region}</td>
-                                <td>{country.subregion}</td>
-                                <td>{country.population}</td>
-                                <td>{country.area}</td>
-                            </tr>
-                        )
-                    })}
-                </tbody>
-            </table>
+            <CountriesTable filteredCountries={filteredCountries} />
         </>
     )
 }

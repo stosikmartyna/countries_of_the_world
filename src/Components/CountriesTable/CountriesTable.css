@@ -1,0 +1,28 @@
+table {
+    margin: 0 auto 60px;
+    width: 70vw;
+}
+
+table img {
+    height: 40px;
+    width: 60px;
+}
+
+th {
+    border: 1px solid grey;
+}
+
+td {
+    border: 1px solid lightgrey;
+    max-width: 180px;
+    padding: 0 .5rem;
+}
+
+.flag-cell {
+    padding: 0;
+    width: 60px;
+}
+
+.amount-cell {
+    text-align: right;
+}
