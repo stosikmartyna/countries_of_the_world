@@ -1,5 +1,5 @@
 import React from 'react';
-import { CountriesView } from './Components/CountriesView';
+import { CountriesView } from './views/CountriesView';
 import './App.css';
 
 export const App = () => {

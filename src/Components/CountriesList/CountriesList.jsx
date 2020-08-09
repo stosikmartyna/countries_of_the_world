@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Header } from './Header/Header';
-import { SearchInput } from './SearchInput/SearchInput';
-import './countriesView.css';
+import { Header } from '../Header/Header';
+import { SearchInput } from '../SearchInput/SearchInput';
+import './CountriesList.css';
 
-export const CountriesView = () => {
+export const CountriesList = () => {
     const [countries, setCountries] = useState(undefined);
     const [filteredCountries, setFilteredCountries] = useState(undefined);
 

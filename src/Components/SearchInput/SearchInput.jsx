@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './searchInput.css';
+import './SearchInput.css';
 
 export const SearchInput = ({filterCountries}) => {
     const [inputValue, setInputValue] = useState('');
