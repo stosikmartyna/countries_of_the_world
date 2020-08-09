@@ -1,18 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './countriesView.css';
 import { Header } from './Header/Header';
+import { SearchInput } from './SearchInput/SearchInput';
+import './countriesView.css';
 
 export const CountriesView = () => {
     const [countries, setCountries] = useState(undefined);
+    const [filteredCountries, setFilteredCountries] = useState(undefined);
 
     const fetchCountryData = async () => {
         try {
             const response = await axios.get('https://restcountries.eu/rest/v2/all')
             setCountries(response.data)
+            setFilteredCountries(response.data)
         } catch (error) {
             console.error(error)
         }
+    }
+
+    const filterCountries = (searchValue) => {
+        const filteredCountries = countries.filter(country => {
+            const countryName = country.name.toUpperCase();
+            const inputValue = searchValue.toUpperCase().trim();
+
+            return countryName.startsWith(inputValue);
+        });
+
+        setFilteredCountries(filteredCountries);
     }
 
     useEffect(() => {
@@ -22,6 +36,7 @@ export const CountriesView = () => {
     return (
         <>
             <Header />
+            <SearchInput filterCountries={filterCountries} />
             <table>
                 <thead>
                     <tr>
@@ -36,9 +51,9 @@ export const CountriesView = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {countries?.map(country => {
+                    {filteredCountries?.map(country => {
                         return (
-                            <tr>
+                            <tr key={country.name}>
                                 <td><img src={country.flag} alt='flag' /></td>
                                 <td>{country.name}</td>
                                 <td>{country.nativeName}</td>
@@ -49,8 +64,7 @@ export const CountriesView = () => {
                                 <td>{country.area}</td>
                             </tr>
                         )
-                    })
-                    }
+                    })}
                 </tbody>
             </table>
         </>
