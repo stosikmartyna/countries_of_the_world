@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './countriesView.css';
+import { Header } from './Header/Header';
 
 export const CountriesView = () => {
     const [countries, setCountries] = useState(undefined);
@@ -19,24 +20,26 @@ export const CountriesView = () => {
     }, []);
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Flag</th>
-                    <th>Country Name</th>
-                    <th>Native Name</th>
-                    <th>Capital</th>
-                    <th>Region</th>
-                    <th>Subregion</th>
-                    <th>Population</th>
-                    <th>Area</th>
-                </tr>
-            </thead>
-            <tbody>
-                {countries?.map(country => {
+        <>
+            <Header />
+            <table>
+                <thead>
+                    <tr>
+                        <th>Flag</th>
+                        <th>Country Name</th>
+                        <th>Native Name</th>
+                        <th>Capital</th>
+                        <th>Region</th>
+                        <th>Subregion</th>
+                        <th>Population</th>
+                        <th>Area</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {countries?.map(country => {
                         return (
                             <tr>
-                                <td><img src={country.flag} alt='flag'/></td>
+                                <td><img src={country.flag} alt='flag' /></td>
                                 <td>{country.name}</td>
                                 <td>{country.nativeName}</td>
                                 <td>{country.capital}</td>
@@ -47,7 +50,9 @@ export const CountriesView = () => {
                             </tr>
                         )
                     })
-                }
-            </tbody>
-        </table>
-    )}
+                    }
+                </tbody>
+            </table>
+        </>
+    )
+}
