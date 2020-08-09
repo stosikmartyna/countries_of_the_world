@@ -36,7 +36,7 @@ export const CountriesView = () => {
                 {countries?.map(country => {
                         return (
                             <tr>
-                                <td><img src={country.flag} /></td>
+                                <td><img src={country.flag} alt='flag'/></td>
                                 <td>{country.name}</td>
                                 <td>{country.nativeName}</td>
                                 <td>{country.capital}</td>

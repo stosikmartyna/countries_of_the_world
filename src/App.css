@@ -1,0 +1,10 @@
+html, body {
+    font-family: 'Roboto-Regular';
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: local('Roboto'), url('./fonts/Roboto-Regular.ttf');
+}
