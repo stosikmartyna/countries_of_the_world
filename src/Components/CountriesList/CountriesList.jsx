@@ -8,6 +8,12 @@ export const CountriesList = () => {
     const [countries, setCountries] = useState(undefined);
     const [filteredCountries, setFilteredCountries] = useState(undefined);
 
+    const regions = countries?.map(country => country.region).filter((region, index, regions) => regions.indexOf(region) === index).filter(region => region !== '');
+
+    const handleSelectChange = (event) => {
+        filterCountriesByRegion(event.target.value);
+    }
+
     const fetchCountryData = async () => {
         try {
             const response = await axios.get('https://restcountries.eu/rest/v2/all')
@@ -29,6 +35,11 @@ export const CountriesList = () => {
         setFilteredCountries(filteredCountries);
     }
 
+    const filterCountriesByRegion = (optionValue) => {
+        const filteredCountries = countries.filter(country => country.region === optionValue);
+        setFilteredCountries(filteredCountries);
+    }
+
     useEffect(() => {
         fetchCountryData();
     }, []);
@@ -36,8 +47,17 @@ export const CountriesList = () => {
     return (
         <>
             <Header />
-            <SearchInput filterCountries={filterCountries} />
-            <CountriesTable filteredCountries={filteredCountries} />
+            <SearchInput filterCountries={filterCountries} />  
+            <select onChange={handleSelectChange}>
+                <option value="">Choose region</option>
+                {regions?.map(region => (
+                    <option value={region} key={region}>
+                        {region}
+                    </option>
+                ))}
+            </select>
+            <CountriesTable filteredCountries={filteredCountries}/>
         </>
     )
 }
+

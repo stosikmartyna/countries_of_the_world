@@ -1,7 +1,7 @@
 import React from 'react';
 import './CountriesTable.css';
 
-export const CountriesTable = ({filteredCountries}) => {
+export const CountriesTable = ({filteredCountries, sortBy}) => {
     return (
         <table>
             <thead>
