@@ -1,0 +1,21 @@
+select {
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    color: #757575;
+    cursor: pointer;
+    font-family: 'Roboto-Regular';
+    font-size: 1rem;
+    outline: none;
+    padding: .3rem 0;
+    width: 225px;
+}
+
+option {
+    border: none;
+    color: #27323d;    
+}
+
+option:checked {
+    background-color: #f5f5f5;
+}

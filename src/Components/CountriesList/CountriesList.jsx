@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Header } from '../Header/Header';
-import { SearchInput } from '../SearchInput/SearchInput';
+import { SearchCountry } from '../SearchCountry/SearchCountry';
 import { CountriesTable } from '../CountriesTable/CountriesTable';
+import { SelectRegion } from '../SelectRegion/SelectRegion';
+import './CountriesList.css';
 
 export const CountriesList = () => {
     const [countries, setCountries] = useState(undefined);
@@ -24,7 +26,7 @@ export const CountriesList = () => {
         }
     }
 
-    const filterCountries = (searchValue) => {
+    const filterCountriesByName = (searchValue) => {
         const filteredCountries = countries.filter(country => {
             const countryName = country.name.toUpperCase();
             const inputValue = searchValue.toUpperCase().trim();
@@ -47,16 +49,11 @@ export const CountriesList = () => {
     return (
         <>
             <Header />
-            <SearchInput filterCountries={filterCountries} />  
-            <select onChange={handleSelectChange}>
-                <option value="">Choose region</option>
-                {regions?.map(region => (
-                    <option value={region} key={region}>
-                        {region}
-                    </option>
-                ))}
-            </select>
-            <CountriesTable filteredCountries={filteredCountries}/>
+            <div className="filter-container"> 
+                <SearchCountry filterCountries={filterCountriesByName} />  
+                <SelectRegion onSelectChange={handleSelectChange} regions={regions} />
+            </div>
+            <CountriesTable filteredCountries={filteredCountries} />
         </>
     )
 }

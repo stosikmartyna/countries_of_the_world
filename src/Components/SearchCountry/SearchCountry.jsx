@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './SearchInput.css';
+import './SearchCountry.css';
 
-export const SearchInput = ({filterCountries}) => {
+export const SearchCountry = ({filterCountries}) => {
     const [inputValue, setInputValue] = useState('');
 
     const handleInputChange = (event) => {
