@@ -4,6 +4,7 @@ import { Header } from '../Header/Header';
 import { SearchCountry } from '../SearchCountry/SearchCountry';
 import { CountriesTable } from '../CountriesTable/CountriesTable';
 import { SelectRegion } from '../SelectRegion/SelectRegion';
+import { ScrollTopButton } from '../ScrollTopButton/ScrollTopButton';
 import './CountriesList.css';
 
 export const CountriesList = () => {
@@ -48,31 +49,28 @@ export const CountriesList = () => {
     }, []);
 
     const checkScrollTop = () => {
-        if (!showScroll && window.pageYOffset > 200){
-          setShowScroll(true)
-        } else if (showScroll && window.pageYOffset <= 200){
-          setShowScroll(false)
+        if (!showScroll && window.pageYOffset > 200) {
+            setShowScroll(true)
+        } else if (showScroll && window.pageYOffset <= 200) {
+            setShowScroll(false)
         }
-      };
-    
-      const scrollTop = () => {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-      };
-    
-      window.addEventListener('scroll', checkScrollTop)
+    };
 
+    const scrollTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.addEventListener('scroll', checkScrollTop)
 
     return (
         <>
             <Header />
-            <div className="filter-container"> 
-                <SearchCountry filterCountries={filterCountriesByName} />  
+            <div className="filter-container">
+                <SearchCountry filterCountries={filterCountriesByName} />
                 <SelectRegion onSelectChange={handleSelectChange} regions={regions} />
             </div>
             <CountriesTable filteredCountries={filteredCountries} />
-            <button className="scrollTop" onClick={scrollTop} style={{display: showScroll ? 'flex' : 'none'}}> 
-                <img src="scrollTopButton.png"/>
-            </button>
+            <ScrollTopButton scrollTop={scrollTop} showScroll={showScroll} />
         </>
     )
 }

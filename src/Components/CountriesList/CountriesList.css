@@ -3,38 +3,3 @@
     justify-content: center;
     margin-bottom: 2rem;
 }
-
-.scrollTop {
-    animation: fadeIn 0.3s;
-    background-color: transparent;
-    border: none;
-    border: 1px solid grey;
-    border-radius: 20px;
-    bottom: 20px; 
-    cursor: pointer;
-    display: none; 
-    opacity: 0.5;
-    outline: none;
-    padding: .7rem;
-    position: fixed;
-    right: 70px; 
-    transition: opacity 0.4s;
-    z-index: 99;
-}
-
-.scrollTop:hover{
-    opacity: 1;
-  }
-
-.scrollTop img {
-    width: 35px;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
