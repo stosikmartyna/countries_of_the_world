@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/world_countries/static/css/main.1109be89.chunk.css",
+    "main.js": "/world_countries/static/js/main.08025ac6.chunk.js",
+    "main.js.map": "/world_countries/static/js/main.08025ac6.chunk.js.map",
+    "runtime-main.js": "/world_countries/static/js/runtime-main.50908616.js",
+    "runtime-main.js.map": "/world_countries/static/js/runtime-main.50908616.js.map",
+    "static/js/2.9898e8f9.chunk.js": "/world_countries/static/js/2.9898e8f9.chunk.js",
+    "static/js/2.9898e8f9.chunk.js.map": "/world_countries/static/js/2.9898e8f9.chunk.js.map",
+    "index.html": "/world_countries/index.html",
+    "precache-manifest.8fa07da45ff5f4a6ffd92cb2b3300010.js": "/world_countries/precache-manifest.8fa07da45ff5f4a6ffd92cb2b3300010.js",
+    "service-worker.js": "/world_countries/service-worker.js",
+    "static/css/main.1109be89.chunk.css.map": "/world_countries/static/css/main.1109be89.chunk.css.map",
+    "static/js/2.9898e8f9.chunk.js.LICENSE.txt": "/world_countries/static/js/2.9898e8f9.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/world_countries/static/media/Roboto-Regular.11eabca2.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.50908616.js",
+    "static/js/2.9898e8f9.chunk.js",
+    "static/css/main.1109be89.chunk.css",
+    "static/js/main.08025ac6.chunk.js"
+  ]
+}
